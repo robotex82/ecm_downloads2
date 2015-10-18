@@ -1,0 +1,51 @@
+= ECM Downloads 2
+
+This version supports rails 4.x and twitter bootstrap 3. For legacy support use ecm_downloads
+
+= Purpose
+
+TODO
+
+= Features
+
+TODO
+
+= Installation
+
+Add the gem to your bundle:
+
+  # Gemfile
+  gem 'ecm_downloads2'
+
+Install your bundle:
+
+  > bundle install
+
+Generate initializer:
+
+  > rails generate ecm:downloads:install
+
+Add migrations:
+
+  > rake ecm_downloads_engine:install:migrations
+
+Migrate:
+
+  > rake db:migrate
+
+Add the routes:
+
+  # config/routes.rb
+  Ecm::Downloads::Routing.routes(self)
+
+= Usage
+
+TODO>
+
+= Todo
+
+TODO
+
+= License
+
+This project rocks and uses MIT-LICENSE.
