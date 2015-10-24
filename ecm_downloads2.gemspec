@@ -21,10 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency "acts_as_list"
   s.add_dependency "acts_as_published"
   s.add_dependency "awesome_nested_set"
-  # s.add_dependency "awesome_nested_set-tools"
+  s.add_dependency "awesome_nested_set-tools"
   s.add_dependency "friendly_id"
   s.add_dependency "paperclip"
-  # s.add_dependency "rails_tools-absence_validator"
 
   # Development database
   s.add_development_dependency "sqlite3"

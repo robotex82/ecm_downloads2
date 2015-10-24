@@ -3,11 +3,11 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
   self.table_name = 'ecm_downloads_download_categories'
 
   # associations
-  has_many :ecm_downloads_downloads,
+  has_many :ecm_downloads_downloads, -> { order(:position) },
            :class_name => Ecm::Downloads::Download,
            :dependent => :destroy,
-           :foreign_key => :ecm_downloads_download_category_id # ,
-           # :order => 'position'
+           :foreign_key => :ecm_downloads_download_category_id,
+           inverse_of: :ecm_downloads_download_category
 
   accepts_nested_attributes_for :ecm_downloads_downloads,
                                 :allow_destroy => true

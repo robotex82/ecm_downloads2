@@ -16,8 +16,6 @@ gem "jquery-rails"
 # To use debugger
 # gem 'debugger'
 
-gem "awesome_nested_set-tools", path: '~/rails/modules/awesome_nested_set-tools'
-
 # Travis CI
 unless ENV['TRAVIS_RUBY_VERSION'].nil?
   gem 'pg'

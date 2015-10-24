@@ -7,13 +7,19 @@ if defined?(ActiveAdmin)
     menu :parent => I18n.t('ecm.downloads.active_admin.menu')
 
     permit_params :description,
-                  :ecm_downloads_downloads_attributes,
                   :ecm_downloads_downloads_count,
                   :locale,
                   :name,
                   :parent_id,
                   :position,
-                  :slug
+                  :slug,
+                  ecm_downloads_downloads_attributes: [
+                    :asset,
+                    :description,
+                    :ecm_downloads_download_category_id,
+                    :name,
+                    :published
+                  ]
 
     # sorting
     config.sort_order = 'lft_asc'
@@ -32,6 +38,10 @@ if defined?(ActiveAdmin)
     end
 
     form do |f|
+      f.inputs do
+        f.semantic_errors *f.object.errors.keys
+      end
+      
       f.inputs do
         f.input :parent, :as => :select,
                          :collection => nested_set_options(Ecm::Downloads::DownloadCategory, f.object) { |dc| "#{'-' * dc.depth} #{dc.name}" }

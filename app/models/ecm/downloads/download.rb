@@ -45,7 +45,8 @@ class Ecm::Downloads::Download < ActiveRecord::Base
   # associations
   belongs_to :ecm_downloads_download_category,
              :class_name => Ecm::Downloads::DownloadCategory,
-             :counter_cache => :ecm_downloads_downloads_count
+             :counter_cache => :ecm_downloads_downloads_count,
+             inverse_of: :ecm_downloads_downloads
 
   # attibutes
   attr_accessible :asset,
