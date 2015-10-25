@@ -51,6 +51,10 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
     "<%= render_download_category '#{self.name}' %>"
   end
 
+  def human
+    name
+  end
+
   def index_name
     if self.root?
       "[#{self.locale}] #{self.name}"
@@ -63,13 +67,13 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
     name
   end
 
-  def tree_name
-    root_prefix = (self.root?) ? "[#{self.locale}] " : ""
+  # def tree_name
+  #   root_prefix = (self.root?) ? "[#{self.locale}] " : ""
 
-    if ecm_downloads_downloads_count < 1
-      "#{root_prefix}#{to_s}"
-    else
-      "#{root_prefix}#{to_s} (#{ecm_downloads_downloads_count})"
-    end
-  end
+  #   if ecm_downloads_downloads_count < 1
+  #     "#{root_prefix}#{to_s}"
+  #   else
+  #     "#{root_prefix}#{to_s} (#{ecm_downloads_downloads_count})"
+  #   end
+  # end
 end

@@ -72,8 +72,12 @@ class Ecm::Downloads::Download < ActiveRecord::Base
   do_not_validate_attachment_file_type :asset
   # public methods
 
-  def to_s
+  def human
     name
+  end
+
+  def to_s
+    human
   end
 
   # private methods

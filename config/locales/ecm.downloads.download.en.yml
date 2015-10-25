@@ -23,6 +23,6 @@ en:
       ecm/downloads/download:
         one: download
         other: downloads
-  resources:
+  routes:
     ecm_downloads_downloads: downloads
 

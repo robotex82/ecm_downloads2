@@ -2,4 +2,6 @@
 
 <%= render @download %>
 
-<%= link_to @download.ecm_downloads_download_category, @download.ecm_downloads_download_category %>
+<div class="well page-actions">
+  <%= link_to @download.ecm_downloads_download_category, @download.ecm_downloads_download_category, class: 'btn btn-default' %>
+</div>

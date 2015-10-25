@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "awesome_nested_set-tools"
   s.add_dependency "friendly_id"
   s.add_dependency "paperclip"
+  s.add_dependency 'draper'
 
   # Development database
   s.add_development_dependency "sqlite3"
@@ -33,6 +34,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency "thin"
   s.add_development_dependency 'devise'
   s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
+  s.add_development_dependency 'therubyracer'
+  s.add_development_dependency 'less-rails'
+  s.add_development_dependency 'twitter-bootstrap-rails'
 
   # Documentation
   s.add_development_dependency "yard"

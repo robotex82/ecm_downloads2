@@ -6,6 +6,7 @@ module Ecm
       subject { FactoryGirl.build(:ecm_downloads_download_category) }
 
       it { should have_many(:ecm_downloads_downloads) }
+      it { should respond_to :human }
 
       it "should respond to root" do
         download_category = FactoryGirl.create(:ecm_downloads_download_category)

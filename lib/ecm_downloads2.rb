@@ -1,5 +1,3 @@
-require 'rubygems'
-
 require 'active_admin-acts_as_list'
 require 'active_admin-awesome_nested_set'
 require 'acts_as_list'
@@ -8,6 +6,7 @@ require 'awesome_nested_set'
 require 'awesome_nested_set-tools'
 require 'friendly_id'
 require 'paperclip'
+require 'draper'
 
 require 'ecm/downloads/engine'
 require 'ecm/downloads/configuration'

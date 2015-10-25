@@ -21,3 +21,5 @@ unless ENV['TRAVIS_RUBY_VERSION'].nil?
   gem 'pg'
   gem 'mysql2'
 end
+
+gem 'awesome_nested_set-tools', path: '~/rails/modules/awesome_nested_set-tools'

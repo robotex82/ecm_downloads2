@@ -22,6 +22,6 @@ en:
       ecm/downloads/download_category:
         one: download category
         other: download categories
-  resources:
+  routes:
     ecm_downloads_download_categories: download-categories
 

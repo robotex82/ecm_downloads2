@@ -38,6 +38,12 @@ Add the routes:
   # config/routes.rb
   Ecm::Downloads::Routing.routes(self)
 
+== Optional: Generate locale files
+
+You may want to copy the locales to your app:
+
+  > rails generate ecm:downloads:locales
+
 = Usage
 
 TODO>

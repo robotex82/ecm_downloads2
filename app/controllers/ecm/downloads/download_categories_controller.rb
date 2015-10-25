@@ -1,6 +1,6 @@
 class Ecm::Downloads::DownloadCategoriesController < Ecm::Downloads::Configuration.base_controller.constantize
   def index
-    @download_categories = Ecm::Downloads::DownloadCategory.all
+    @download_categories = Ecm::Downloads::DownloadCategory.all.decorate
   end
 
   def show

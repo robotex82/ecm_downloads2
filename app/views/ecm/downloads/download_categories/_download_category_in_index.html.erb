@@ -1,0 +1,5 @@
+<%= link_to(download_category, class: "list-group-item left-padding-#{download_category.depth * 3}", title: download_category.description) do %>
+  <%= download_category.tree_name %>
+  <%= download_category.locale_label %>
+  <%= download_category.ecm_downloads_downloads_count_label %>
+<% end %>

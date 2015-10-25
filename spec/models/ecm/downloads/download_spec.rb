@@ -12,6 +12,8 @@ module Ecm
       it { should validate_presence_of(:name) }
       it { should validate_presence_of(:ecm_downloads_download_category) }
 
+      it { should respond_to :human }
+
       # acts as list
       it { should respond_to(:move_higher) }
 

@@ -1,6 +1,6 @@
 module Ecm
   module Downloads
-    VERSION = "0.0.11.pre"
+    VERSION = "1.0.0"
   end
 end
 

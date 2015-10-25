@@ -11,6 +11,8 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 require 'devise'
 require 'activeadmin'
+require 'less-rails'
+require 'twitter-bootstrap-rails'
 require "ecm_downloads2"
 
 module Dummy
