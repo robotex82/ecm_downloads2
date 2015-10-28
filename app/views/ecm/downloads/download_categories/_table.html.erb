@@ -1,0 +1,7 @@
+<div class="table-responsive">
+  <table class="<%= Ecm::Downloads::Configuration.download_categories_table_classes %>">
+    <tbody>
+      <%= render partial: 'download_category_in_table', collection: download_categories, as: :download_category %>
+    </tbody>
+  </table>
+</div>

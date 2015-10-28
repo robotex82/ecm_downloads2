@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   Ecm::Downloads::Routing.routes(self)
+
+  root to: 'ecm/downloads/download_categories#index'
 end

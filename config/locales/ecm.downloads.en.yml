@@ -5,7 +5,7 @@ en:
         menu: "Downloads"
       download:
         actions:
-          start_download: "Download now"  
+          start_download: "Download now"
         messages:
           not_found: "Download \"%{name}\" not found."
       download_category:
@@ -13,4 +13,7 @@ en:
           back_to_index: "Back to the index"
         messages:
           not_found: "Download category \"%{name}\" not found."
-          no_downloads_available: "There are now downloads in this category."          
+          no_downloads_available: "There are now downloads in this category."
+      views:
+        actions:
+          back: 'Back'

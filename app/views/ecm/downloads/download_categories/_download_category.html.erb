@@ -7,9 +7,7 @@
     </div>
   <% end %>
 
-  <div class="list-group">
-    <%= render partial: 'download_category_in_index', collection: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants), as: :download_category %>
-  </div>
+  <%= render partial: 'table', locals: { download_categories: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants) } %>
 
   <div class="download_category-downloads item_list">
     <h2><%= Ecm::Downloads::DownloadCategory.human_attribute_name(:ecm_downloads_downloads) %></h2>

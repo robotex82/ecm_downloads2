@@ -8,7 +8,7 @@ module Ecm::Downloads
     end
 
     def locale_label
-      h.content_tag(:span, locale, class: 'label label-info')
+      h.content_tag(:span, locale, class: 'label label-default')
     end
 
     def tree_name

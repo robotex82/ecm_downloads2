@@ -1,0 +1,9 @@
+<tr class="<%= download_category.class.name.underscore.gsub('/', ' ') %>" id="<%= "#{download_category.class.name.underscore.gsub('/', '-')}-#{download_category.to_param}" %>">
+  <td>
+    <%= link_to(download_category.tree_name, download_category, class: "left-padding-#{download_category.depth * 3}", title: download_category.description) %>
+    <%= download_category.locale_label %>
+  </td>
+  <td class="text-right">
+    <%= download_category.ecm_downloads_downloads_count_label %>
+  </td>
+</tr>

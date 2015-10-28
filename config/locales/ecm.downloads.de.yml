@@ -5,7 +5,7 @@ de:
         menu: "Downloads"
       download:
         actions:
-          start_download: "Jetzt herunterladen"  
+          start_download: "Jetzt herunterladen"
         messages:
           not_found: "Download \"%{name}\" nicht gefunden."
       download_category:
@@ -13,4 +13,7 @@ de:
           back_to_index: "Zurück zur Übersicht"
         messages:
           not_found: "Download Kategorie \"%{name}\" nicht gefunden."
-          no_downloads_available: "Keine Downloads in dieser Kategorie vorhanden."  
+          no_downloads_available: "Keine Downloads in dieser Kategorie vorhanden."
+      views:
+        actions:
+          back: 'Zurück'

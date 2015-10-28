@@ -13,9 +13,16 @@ module Ecm
         {}
       end
 
-
       mattr_accessor :base_controller do
         'ApplicationController'
+      end
+
+      mattr_accessor :downloads_table_classes do
+        'table table-striped table-hover'
+      end
+
+      mattr_accessor :download_categories_table_classes do
+        'table table-striped table-hover'
       end
     end
   end
