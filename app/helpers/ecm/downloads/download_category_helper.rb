@@ -6,9 +6,9 @@ module Ecm::Downloads
         I18n.t('ecm.downloads.download_category.messages.not_found', :name => download_category_name)
       else
         begin
-          o = '<notextile>'
+          o = Ecm::Pictures::Configuration.prevent_textile_rendering_in_html ? '<notextile>' : ''
           o << render(download_category)
-          o << '</notextile>'
+          o << '</notextile>' if Ecm::Pictures::Configuration.prevent_textile_rendering_in_html
           return o.html_safe
         rescue => e
           raise e

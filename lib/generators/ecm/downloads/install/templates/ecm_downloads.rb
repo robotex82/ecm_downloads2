@@ -23,4 +23,10 @@ Ecm::Downloads.configure do |config|
   # Default: config.downloads_table_classes = 'table table-striped table-hover'
   #
   config.downloads_table_classes = 'table table-striped table-hover'
+
+  # Adds <notextile> tags around the to fix html output.
+  #
+  # Default: config.prevent_textile_rendering_in_html = true
+  #
+  config.prevent_textile_rendering_in_html = true
 end
