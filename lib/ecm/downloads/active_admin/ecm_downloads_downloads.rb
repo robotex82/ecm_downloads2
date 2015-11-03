@@ -2,6 +2,8 @@ include ActiveAdmin::ActsAsList::Helper
 include ActsAsPublished::ActiveAdminHelper
 
 ActiveAdmin.register Ecm::Downloads::Download do
+  decorate_with Ecm::Downloads::DownloadDecorator
+
   # acts as list
   sortable_member_actions
 
@@ -45,5 +47,37 @@ ActiveAdmin.register Ecm::Downloads::Download do
     end
     column :created_at
     actions
+  end
+
+  show :title => :to_s do
+    attributes_table do
+      row :ecm_downloads_download_category
+      row :name
+      row :published_at
+      row :asset_file_name
+      row :filesize
+      row :asset_content_type
+      row :asset_fingerprint
+      row :created_at
+      row :updated_at
+    end
+
+    panel Ecm::Downloads::Download.human_attribute_name(:description) do
+      div do
+        ecm_downloads_download.description
+      end
+    end
+
+    panel Ecm::Downloads::Download.human_attribute_name(:display_code) do
+      div do
+        ecm_downloads_download.display_code
+      end
+    end
+
+    panel Ecm::Downloads::Download.human_attribute_name(:link) do
+      div do
+        ecm_downloads_download_path(ecm_downloads_download)
+      end
+    end
   end
 end if defined?(ActiveAdmin)

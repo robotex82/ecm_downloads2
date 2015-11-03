@@ -17,5 +17,9 @@ module Ecm::Downloads
     def tree_name
       name
     end
+
+    def display_code
+      "<%= render_download '#{self.name}' %>"
+    end
   end
 end

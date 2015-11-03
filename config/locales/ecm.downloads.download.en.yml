@@ -13,6 +13,8 @@ en:
         description: description
         ecm_downloads_download_category: download category
         ecm_downloads_download_category_id: download category
+        filesize: filesize
+        link: link
         locale: locale
         name: name
         position: position

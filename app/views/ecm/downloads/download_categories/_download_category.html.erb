@@ -7,14 +7,14 @@
     </div>
   <% end %>
 
-  <%= render partial: 'table', locals: { download_categories: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants) } %>
+  <%= render partial: 'ecm/downloads/download_categories/table', locals: { download_categories: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants) } %>
 
   <div class="download_category-downloads item_list">
-    <h2><%= Ecm::Downloads::DownloadCategory.human_attribute_name(:ecm_downloads_downloads) %></h2>
+
     <% if download_category.ecm_downloads_downloads.published.count == 0 %>
       <p><%= t('ecm.downloads.download_category.messages.no_downloads_available') %></p>
     <% else %>
-      <%= render partial: 'ecm/downloads/downloads/table', locals: { downloads: download_category.ecm_downloads_downloads.published } %>
+      <%= render partial: 'ecm/downloads/downloads/table_in_download_category', locals: { downloads: download_category.ecm_downloads_downloads.published } %>
     <% end %>
   </div>
 </div>

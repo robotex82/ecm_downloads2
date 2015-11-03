@@ -13,6 +13,8 @@ de:
         description: Beschreibung
         ecm_downloads_download_category: Download Kategorie
         ecm_downloads_download_category_id: Download Kategorie
+        filesize: Dateigröße
+        link: Link
         locale: Sprache
         name: Name
         position: Position

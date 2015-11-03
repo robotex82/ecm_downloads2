@@ -3,6 +3,8 @@ if defined?(ActiveAdmin)
   include ActiveAdmin::AwesomeNestedSet::Helper
 
   ActiveAdmin.register Ecm::Downloads::DownloadCategory do
+    decorate_with Ecm::Downloads::DownloadCategoryDecorator
+
     # menu entry settings
     menu :parent => I18n.t('ecm.downloads.active_admin.menu')
 
@@ -41,7 +43,7 @@ if defined?(ActiveAdmin)
       f.inputs do
         f.semantic_errors *f.object.errors.keys
       end
-      
+
       f.inputs do
         f.input :parent, :as => :select,
                          :collection => nested_set_options(Ecm::Downloads::DownloadCategory, f.object) { |dc| "#{'-' * dc.depth} #{dc.name}" }
@@ -104,7 +106,7 @@ if defined?(ActiveAdmin)
 
       panel Ecm::Downloads::DownloadCategory.human_attribute_name(:link) do
         div do
-          ecm_downloads_download_category_path(I18n.locale, ecm_downloads_download_category)
+          ecm_downloads_download_category_path(ecm_downloads_download_category)
         end
       end
 

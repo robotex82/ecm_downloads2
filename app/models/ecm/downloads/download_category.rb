@@ -43,37 +43,11 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
   validates :locale, :absence => true,
                      :unless => :root?
 
-  # public methods
-
-  # public methods
-
-  def display_code
-    "<%= render_download_category '#{self.name}' %>"
-  end
-
   def human
     name
-  end
-
-  def index_name
-    if self.root?
-      "[#{self.locale}] #{self.name}"
-    else
-      "#{'&#160;&#160;&#160;&#160;' * self.level} |--&#160;#{self.name}".html_safe
-    end
   end
 
   def to_s
     name
   end
-
-  # def tree_name
-  #   root_prefix = (self.root?) ? "[#{self.locale}] " : ""
-
-  #   if ecm_downloads_downloads_count < 1
-  #     "#{root_prefix}#{to_s}"
-  #   else
-  #     "#{root_prefix}#{to_s} (#{ecm_downloads_downloads_count})"
-  #   end
-  # end
 end

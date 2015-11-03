@@ -10,6 +10,7 @@ en:
         ecm_downloads_downloads: downloads
         ecm_downloads_downloads_count: downloads
         lft: left
+        link: link
         locale: locale
         name: name
         parent: parent

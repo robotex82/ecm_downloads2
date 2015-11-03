@@ -70,7 +70,7 @@ class Ecm::Downloads::Download < ActiveRecord::Base
   validates :name, :presence => true
   validates_attachment :asset, presence => true
   do_not_validate_attachment_file_type :asset
-  # public methods
+
 
   def human
     name
@@ -80,8 +80,8 @@ class Ecm::Downloads::Download < ActiveRecord::Base
     human
   end
 
-  # private methods
   private
+
   def fix_updated_position
     Rails.logger.debug "Fixing positions for #{self.to_s} (Moving to last)"
     add_to_list_bottom
