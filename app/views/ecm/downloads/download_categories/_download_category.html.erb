@@ -7,8 +7,6 @@
     </div>
   <% end %>
 
-  <%= render partial: 'ecm/downloads/download_categories/table', locals: { download_categories: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants) } %>
-
   <div class="download_category-downloads item_list">
 
     <% if download_category.ecm_downloads_downloads.published.count == 0 %>
@@ -17,4 +15,6 @@
       <%= render partial: 'ecm/downloads/downloads/table_in_download_category', locals: { downloads: download_category.ecm_downloads_downloads.published } %>
     <% end %>
   </div>
+
+  <%= render partial: 'ecm/downloads/download_categories/table', locals: { download_categories: Ecm::Downloads::DownloadCategoryDecorator.decorate_collection(download_category.descendants) } %>
 </div>
