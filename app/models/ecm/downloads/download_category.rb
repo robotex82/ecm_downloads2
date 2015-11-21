@@ -43,6 +43,10 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
   validates :locale, :absence => true,
                      :unless => :root?
 
+  def ecm_downloads_downloads_count
+    ecm_downloads_downloads.count
+  end
+
   def human
     name
   end
