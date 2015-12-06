@@ -9,7 +9,7 @@ module Ecm
         yield self
       end
 
-       mattr_accessor :paperclip_options do
+      mattr_accessor :paperclip_options do
         {}
       end
 
