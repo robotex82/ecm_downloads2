@@ -33,7 +33,7 @@ feature 'Ecm::Downloads::Download admin' do
 
   def fill_new_form
     select      @download_category.name,         :from => 'ecm_downloads_download[ecm_downloads_download_category_id]'
-    attach_file "ecm_downloads_download[asset]", File.join(Rails.root, "spec/files", "ecm/downloads", "download/asset.txt")
+    attach_file "ecm_downloads_download[asset]", File.join(Ecm::Downloads::Engine.root, "spec/files", "ecm/downloads", "download/asset.txt")
     fill_in     "ecm_downloads_download[name]",  :with => "Example Download"
   end
 

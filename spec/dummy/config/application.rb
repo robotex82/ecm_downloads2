@@ -11,6 +11,8 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 require 'devise'
 require 'activeadmin'
+require 'active_admin-acts_as_list'
+require 'active_admin-awesome_nested_set'
 require 'less-rails'
 require 'twitter-bootstrap-rails'
 require "ecm_downloads2"

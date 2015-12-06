@@ -16,8 +16,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", ">= 4.0", "< 5.0"
-  s.add_dependency "active_admin-acts_as_list"
-  s.add_dependency "active_admin-awesome_nested_set"
   s.add_dependency "acts_as_list"
   s.add_dependency "acts_as_published"
   s.add_dependency "awesome_nested_set"
@@ -33,10 +31,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rails-dummy'
   s.add_development_dependency "thin"
   s.add_development_dependency 'devise'
-  s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
   s.add_development_dependency 'therubyracer'
   s.add_development_dependency 'less-rails'
   s.add_development_dependency 'twitter-bootstrap-rails'
+  s.add_development_dependency 'jquery-rails'
+
+  s.add_development_dependency 'activeadmin', '~> 1.0.0.pre2'
+  s.add_development_dependency 'active_admin-acts_as_list'
+  s.add_development_dependency 'active_admin-awesome_nested_set'  
 
   # Documentation
   s.add_development_dependency "yard"

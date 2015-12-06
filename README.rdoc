@@ -2,13 +2,22 @@
 
 This version supports rails 4.x and twitter bootstrap 3. For legacy support use ecm_downloads
 
-= Purpose
+= Migrating from 1.x.x to 2.0.0
 
-TODO
+Add active_admin-awesome_nested_set and active_admin-acts_as_list to your gemfile, if you are using activeadmin:
 
-= Features
+    # Gemfile
+    gem 'active_admin-awesome_nested_set'
+    gem 'active_admin-acts_as_list'
 
-TODO
+= Prerequisites
+
+if you are using activeadmin as backend, ecm_cms2 comes with admin files to provide a backend. In that case, you'll need active_admin-awesome_nested_set and active_admin-acts_as_list. Add it to your gemfile:
+
+    # Gemfile
+    gem 'active_admin-awesome_nested_set'
+    gem 'active_admin-acts_as_list'
+
 
 = Installation
 
@@ -53,13 +62,12 @@ You may want to copy the locales to your app:
 
   > rails generate ecm:downloads:locales
 
-= Usage
+= Running specs
 
-TODO>
-
-= Todo
-
-TODO
+    gem install bundler
+    bundle
+    cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+    guard
 
 = License
 
