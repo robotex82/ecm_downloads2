@@ -4,13 +4,13 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
 
   # associations
   has_many :ecm_downloads_downloads, -> { order(:position) },
-           :class_name => Ecm::Downloads::Download,
-           :dependent => :destroy,
-           :foreign_key => :ecm_downloads_download_category_id,
+           class_name: Ecm::Downloads::Download,
+           dependent: :destroy,
+           foreign_key: :ecm_downloads_download_category_id,
            inverse_of: :ecm_downloads_download_category
 
   accepts_nested_attributes_for :ecm_downloads_downloads,
-                                :allow_destroy => true
+                                allow_destroy: true
 
   # attributes
   attr_accessible :description,
@@ -24,24 +24,24 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
 
   # awesome nested set
   acts_as_nested_set
-  default_scope  { order('lft ASC') }
+  default_scope { order('lft ASC') }
 
   # friendly id
   extend FriendlyId
-  friendly_id :name, :use => [:slugged, :finders]
+  friendly_id :name, use: [:slugged, :finders]
 
   # validations
-  validates :name, :presence => true,
-                   :uniqueness => { :scope => [ :parent_id ] }
+  validates :name, presence: true,
+                   uniqueness: { scope: [:parent_id] }
 
-  validates :locale, :presence => true,
-                     :if => :root?
+  validates :locale, presence: true,
+                     if: :root?
 
-  validates :locale, :inclusion => I18n.available_locales.map(&:to_s),
-                     :if => Proc.new { |cc| cc.locale.present? }
+  validates :locale, inclusion: I18n.available_locales.map(&:to_s),
+                     if: proc { |cc| cc.locale.present? }
 
-  validates :locale, :absence => true,
-                     :unless => :root?
+  validates :locale, absence: true,
+                     unless: :root?
 
   def ecm_downloads_downloads_count
     ecm_downloads_downloads.count

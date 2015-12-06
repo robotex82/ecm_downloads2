@@ -11,7 +11,7 @@ ActiveAdmin.register Ecm::Downloads::Download do
   acts_as_published_actions
 
   # config
-  menu :parent => I18n.t('ecm.downloads.active_admin.menu')
+  menu parent: I18n.t('ecm.downloads.active_admin.menu')
 
   permit_params :asset,
                 :description,
@@ -23,13 +23,13 @@ ActiveAdmin.register Ecm::Downloads::Download do
   scope :published
   scope :unpublished
 
-  form :html => { :enctype => "multipart/form-data" } do |f|
+  form html: { enctype: 'multipart/form-data' } do |f|
     f.inputs do
-      f.input :ecm_downloads_download_category, :as => :select,
-                                                :collection => nested_set_options(Ecm::Downloads::DownloadCategory) { |dc| "#{'-' * dc.level} #{dc.name}" }
-      f.input :asset, :as => :file
+      f.input :ecm_downloads_download_category, as: :select,
+                                                collection: nested_set_options(Ecm::Downloads::DownloadCategory) { |dc| "#{'-' * dc.level} #{dc.name}" }
+      f.input :asset, as: :file
       f.input :name
-      f.input :published, :as => :boolean
+      f.input :published, as: :boolean
       f.input :description
     end
 
@@ -42,14 +42,14 @@ ActiveAdmin.register Ecm::Downloads::Download do
     column :name
     acts_as_published_columns
     column :asset_file_name
-    column :asset_file_size, :sortable => :asset_file_size do |download|
+    column :asset_file_size, sortable: :asset_file_size do |download|
       number_to_human_size(download.asset_file_size)
     end
     column :created_at
     actions
   end
 
-  show :title => :to_s do
+  show title: :to_s do
     attributes_table do
       row :ecm_downloads_download_category
       row :name

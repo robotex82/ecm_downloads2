@@ -20,9 +20,9 @@ module Ecm::Downloads
 
     def index_name
       if self.root?
-        "[#{self.locale}] #{self.name}"
+        "[#{locale}] #{name}"
       else
-        "#{'&#160;&#160;&#160;&#160;' * self.level} |--&#160;#{self.name}".html_safe
+        "#{'&#160;&#160;&#160;&#160;' * level} |--&#160;#{name}".html_safe
       end
     end
   end

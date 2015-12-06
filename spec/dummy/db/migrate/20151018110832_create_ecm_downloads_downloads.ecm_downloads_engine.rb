@@ -27,6 +27,6 @@ class CreateEcmDownloadsDownloads < ActiveRecord::Migration
     end
     add_index :ecm_downloads_downloads,
               :ecm_downloads_download_category_id,
-              :name => 'index_ecm_downloads_downloads_on_download_category_id'
+              name: 'index_ecm_downloads_downloads_on_download_category_id'
   end
 end

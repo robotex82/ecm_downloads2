@@ -1,9 +1,9 @@
 module Ecm::Downloads
   module DownloadCategoryHelper
-    def render_download_category(download_category_name, options = {})
-      download_category = DownloadCategory.where(:name => download_category_name).first.decorate
+    def render_download_category(download_category_name, _options = {})
+      download_category = DownloadCategory.where(name: download_category_name).first.decorate
       if download_category.nil?
-        I18n.t('ecm.downloads.download_category.messages.not_found', :name => download_category_name)
+        I18n.t('ecm.downloads.download_category.messages.not_found', name: download_category_name)
       else
         begin
           o = Ecm::Downloads::Configuration.prevent_textile_rendering_in_html ? '<notextile>' : ''

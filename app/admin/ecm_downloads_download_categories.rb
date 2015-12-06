@@ -6,7 +6,7 @@ if defined?(ActiveAdmin)
     decorate_with Ecm::Downloads::DownloadCategoryDecorator
 
     # menu entry settings
-    menu :parent => I18n.t('ecm.downloads.active_admin.menu')
+    menu parent: I18n.t('ecm.downloads.active_admin.menu')
 
     permit_params :description,
                   :ecm_downloads_downloads_count,
@@ -33,8 +33,8 @@ if defined?(ActiveAdmin)
     scope :all
     scope :roots
     I18n.available_locales.each do |locale|
-      self.send(:scope, locale.to_s) do |klass|
-        klass.where(:locale => locale)
+      send(:scope, locale.to_s) do |klass|
+        klass.where(locale: locale)
         # klass.where(klass.arel_table[:locale].eq(locale).or(klass.arel_table[:locale].eq(nil)))
       end
     end
@@ -45,10 +45,10 @@ if defined?(ActiveAdmin)
       end
 
       f.inputs do
-        f.input :parent, :as => :select,
-                         :collection => nested_set_options(Ecm::Downloads::DownloadCategory, f.object) { |dc| "#{'-' * dc.depth} #{dc.name}" }
-        f.input :locale, :as => :select,
-                         :collection => I18n.available_locales.map(&:to_s)
+        f.input :parent, as: :select,
+                         collection: nested_set_options(Ecm::Downloads::DownloadCategory, f.object) { |dc| "#{'-' * dc.depth} #{dc.name}" }
+        f.input :locale, as: :select,
+                         collection: I18n.available_locales.map(&:to_s)
         f.input :name
         f.input :description
       end
@@ -56,11 +56,11 @@ if defined?(ActiveAdmin)
       f.inputs do
         f.has_many :ecm_downloads_downloads do |d|
           if d.object.persisted?
-            d.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+            d.input :_destroy, as: :boolean, label: I18n.t('active_admin.delete')
           end
-          d.input :asset, :as => :file
+          d.input :asset, as: :file
           d.input :name
-          d.input :published, :as => :boolean
+          d.input :published, as: :boolean
           d.input :description
         end
       end
@@ -73,16 +73,16 @@ if defined?(ActiveAdmin)
       sortable_tree_columns
       column :locale
       column :name do |dc|
-        span(:style => "margin-left: #{25 * dc.level}px") { dc.name }
+        span(style: "margin-left: #{25 * dc.level}px") { dc.name }
       end
       column(:description) do |dc|
-        truncate(dc.description, :length => 100 , :separator => ' ')
+        truncate(dc.description, length: 100, separator: ' ')
       end
       column :ecm_downloads_downloads_count
       actions
     end
 
-    show :title => :to_s do
+    show title: :to_s do
       attributes_table do
         row :parent
         row :locale
@@ -111,7 +111,7 @@ if defined?(ActiveAdmin)
       end
 
       panel Ecm::Downloads::DownloadCategory.human_attribute_name(:children) do
-        table_for ecm_downloads_download_category.children, :i18n => Ecm::Downloads::DownloadCategory do
+        table_for ecm_downloads_download_category.children, i18n: Ecm::Downloads::DownloadCategory do
           sortable_tree_columns
           column(:index_name) do |ecm_downloads_download_category|
             link_to ecm_downloads_download_category, [:admin, ecm_downloads_download_category]
@@ -122,14 +122,14 @@ if defined?(ActiveAdmin)
       end
 
       panel Ecm::Downloads::DownloadCategory.human_attribute_name(:ecm_downloads_downloads) do
-        table_for ecm_downloads_download_category.ecm_downloads_downloads, :i18n => Ecm::Downloads::Download do
+        table_for ecm_downloads_download_category.ecm_downloads_downloads, i18n: Ecm::Downloads::Download do
           sortable_columns
           column(:name) do |ecm_downloads_download|
             link_to ecm_downloads_download, [:admin, ecm_downloads_download]
           end
           acts_as_published_columns
           column :asset_file_name
-          column :asset_file_size, :sortable => :asset_file_size do |download|
+          column :asset_file_size, sortable: :asset_file_size do |download|
             number_to_human_size(download.asset_file_size)
           end
           column :created_at

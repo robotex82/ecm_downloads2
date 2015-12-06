@@ -19,7 +19,7 @@ module Ecm::Downloads
     end
 
     def display_code
-      "<%= render_download '#{self.name}' %>"
+      "<%= render_download '#{name}' %>"
     end
   end
 end

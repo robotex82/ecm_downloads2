@@ -9,7 +9,7 @@ module Ecm
       it { should respond_to :human }
       it { should respond_to :root }
 
-      it "should require a locale if it is a root node" do
+      it 'should require a locale if it is a root node' do
         download_category = FactoryGirl.create(:ecm_downloads_download_category)
         download_category.should be_root
 
@@ -17,7 +17,7 @@ module Ecm
         download_category.should_not be_valid
       end
 
-      it "should not accept a locale if it is not a root node" do
+      it 'should not accept a locale if it is not a root node' do
         download_category = FactoryGirl.create(:ecm_downloads_download_category_with_parent)
         download_category.should_not be_root
 
@@ -25,13 +25,13 @@ module Ecm
         download_category.should_not be_valid
       end
 
-      it "should only accept available locales" do
-        download_category = FactoryGirl.build(:ecm_downloads_download_category, :locale => 'invalid')
+      it 'should only accept available locales' do
+        download_category = FactoryGirl.build(:ecm_downloads_download_category, locale: 'invalid')
         download_category.should_not be_valid
       end
 
-      it "should have a friendly id" do
-        download_category = FactoryGirl.create(:ecm_downloads_download_category, :name => 'Look, a slugged category!')
+      it 'should have a friendly id' do
+        download_category = FactoryGirl.create(:ecm_downloads_download_category, name: 'Look, a slugged category!')
         download_category.to_param.should == 'look-a-slugged-category'
       end
 
@@ -54,7 +54,7 @@ module Ecm
             @download = create(:ecm_downloads_download, ecm_downloads_download_category: @download_category)
           end
 
-          it { expect{ @download.destroy; @download_category.reload }.to change{ @download_category.ecm_downloads_downloads_count }.from(1).to(0) }
+          it { expect { @download.destroy; @download_category.reload }.to change { @download_category.ecm_downloads_downloads_count }.from(1).to(0) }
         end
 
         describe 'moving a download to another category' do
@@ -65,11 +65,11 @@ module Ecm
           end
 
           it do
-            expect{
+            expect do
               @download.ecm_downloads_download_category = @other_category
               @download.save
               @download_category.reload
-            }.to change {
+            end.to change {
               @download_category.ecm_downloads_downloads_count
             }.from(1).to(0)
           end

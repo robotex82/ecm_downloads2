@@ -1,22 +1,21 @@
 namespace :ecm_downloads do
   namespace :db do
-    desc "Purges and creates example data"
-    task :populate!, [] => [:environment] do |t, args|
-
-      Rake::Task["ecm_downloads:db:clear!"].execute
-      Rake::Task["ecm_downloads:db:populate"].execute
+    desc 'Purges and creates example data'
+    task :populate!, [] => [:environment] do |_t, _args|
+      Rake::Task['ecm_downloads:db:clear!'].execute
+      Rake::Task['ecm_downloads:db:populate'].execute
     end
 
-    desc "Clears all data!"
-    task :clear!, [] => [:environment] do |t, args|
+    desc 'Clears all data!'
+    task :clear!, [] => [:environment] do |_t, _args|
       Ecm::Downloads::DownloadCategory.delete_all
       Ecm::Downloads::Download.delete_all
     end
 
-    desc "Creates example_data"
-    task :populate, [] => [:environment] do |t, args|
-      require "ffaker"
-      require "forgery"
+    desc 'Creates example_data'
+    task :populate, [] => [:environment] do |_t, _args|
+      require 'ffaker'
+      require 'forgery'
 
       # Create example download category roots
       10.times do
@@ -42,7 +41,7 @@ namespace :ecm_downloads do
         Ecm::Downloads::Download.create! do |d|
           d.ecm_downloads_download_category = download_categories.choice
           d.name        = Faker::Product.product_name
-          d.asset       = File.open(Ecm::Downloads::Engine.root + "spec/fixtures/download/example.txt")
+          d.asset       = File.open(Ecm::Downloads::Engine.root + 'spec/fixtures/download/example.txt')
           d.published   = [true, false].choice
           d.description = Faker::Lorem.paragraph(rand(10))
         end

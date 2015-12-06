@@ -1,11 +1,11 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_view/railtie'
+require 'sprockets/railtie'
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
@@ -15,7 +15,7 @@ require 'active_admin-acts_as_list'
 require 'active_admin-awesome_nested_set'
 require 'less-rails'
 require 'twitter-bootstrap-rails'
-require "ecm_downloads2"
+require 'ecm_downloads2'
 
 module Dummy
   class Application < Rails::Application
@@ -35,4 +35,3 @@ module Dummy
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
-

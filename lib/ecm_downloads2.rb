@@ -15,4 +15,3 @@ module Ecm
     extend Configuration
   end
 end
-
