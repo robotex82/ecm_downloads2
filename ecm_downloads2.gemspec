@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'rails', '>= 4.0', '< 5.0'
+  s.add_dependency 'rails', '>= 4.0'
   s.add_dependency 'acts_as_list'
   s.add_dependency 'acts_as_published'
   s.add_dependency 'awesome_nested_set'
@@ -51,7 +51,7 @@ Gem::Specification.new do |s|
   # Tests
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'shoulda-matchers', '~> 2.8.0'
+  s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'factory_girl_rails'
 
   # Test automation

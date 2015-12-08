@@ -17,8 +17,8 @@ module Ecm
         router.resources :ecm_downloads_download_categories, only: options[:download_category_actions], controller: 'ecm/downloads/download_categories'
         router.resources :ecm_downloads_downloads, only: options[:download_actions], controller: 'ecm/downloads/downloads' do
           router.get :download, on: :member, if: options[:add_download_member_action]
-        end # router.resources :ecm_downloads_downloads
-      end # def
-    end # class Routing
-  end # module Downloads
-end # module Ecm
+        end
+      end
+    end
+  end
+end
