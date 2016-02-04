@@ -1,0 +1,5 @@
+  
+  # ECM Downloads Frontend Routing
+  localized do
+    Ecm::Downloads::Routing.routes(self)
+  end

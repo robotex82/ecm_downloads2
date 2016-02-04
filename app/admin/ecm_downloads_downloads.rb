@@ -1,5 +1,5 @@
-include ActiveAdmin::ActsAsList::Helper
-include ActsAsPublished::ActiveAdminHelper
+include ActiveAdmin::ActsAsList::Helper if Gem::Specification.find_all_by_name('activeadmin').any?
+include ActsAsPublished::ActiveAdminHelper if Gem::Specification.find_all_by_name('activeadmin').any?
 
 ActiveAdmin.register Ecm::Downloads::Download do
   decorate_with Ecm::Downloads::DownloadDecorator
@@ -80,4 +80,4 @@ ActiveAdmin.register Ecm::Downloads::Download do
       end
     end
   end
-end if defined?(ActiveAdmin)
+end if Gem::Specification.find_all_by_name('activeadmin').any?

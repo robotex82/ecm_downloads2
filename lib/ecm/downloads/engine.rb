@@ -3,7 +3,7 @@ module Ecm
     class Engine < Rails::Engine
       initializer :ecm_downloads_engine do
         ::ActiveAdmin.setup do |config|
-          config.load_paths += Dir[root.join('app', 'admin')]
+          config.load_paths += Dir[root.join(*%(app admin))]
           config.register_stylesheet 'ecm_downloads.css'
           # config.register_javascript 'ecm_downloads.js'
         end

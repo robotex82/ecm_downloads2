@@ -1,4 +1,4 @@
-if defined?(ActiveAdmin)
+if Gem::Specification.find_all_by_name('activeadmin').any?
   include ActiveAdmin::ActsAsList::Helper
   include ActiveAdmin::AwesomeNestedSet::Helper
 
