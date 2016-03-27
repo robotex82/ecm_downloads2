@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Provides downloads for active admin.'
   s.description = 'Provides downloads for active admin.'
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', , 'spec/files/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', 'spec/files/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rails', '>= 4.0'
   s.add_dependency 'acts_as_list'
