@@ -25,7 +25,7 @@ class Ecm::Downloads::Download < ActiveRecord::Base
 
   # friendly id
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+  friendly_id :name, use: [:slugged]
 
   # paperclip
   has_attached_file :asset, Ecm::Downloads::Configuration.paperclip_options

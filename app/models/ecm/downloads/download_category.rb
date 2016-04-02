@@ -28,7 +28,7 @@ class Ecm::Downloads::DownloadCategory < ActiveRecord::Base
 
   # friendly id
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+  friendly_id :name, use: [:slugged]
 
   # validations
   validates :name, presence: true,

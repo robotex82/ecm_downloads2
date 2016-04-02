@@ -4,6 +4,6 @@ class Ecm::Downloads::DownloadCategoriesController < Ecm::Downloads::Configurati
   end
 
   def show
-    @download_category = Ecm::Downloads::DownloadCategory.find(params[:id])
+    @download_category = Ecm::Downloads::DownloadCategory.friendly.find(params[:id])
   end
 end
