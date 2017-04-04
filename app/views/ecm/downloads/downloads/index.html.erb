@@ -1,7 +1,0 @@
-<h1><%= Ecm::Downloads::Download.model_name.human(:count => :other).humanize %></h1>
-
-<%= render partial: 'table', locals: { downloads: @downloads } %>
-
-<div class="well page-actions">
-  <%= link_to(t('ecm.downloads.views.actions.back'), root_path, class: 'btn btn-default') %>
-</div>

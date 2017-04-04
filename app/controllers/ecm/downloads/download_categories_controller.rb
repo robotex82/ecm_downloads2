@@ -1,9 +1,9 @@
 class Ecm::Downloads::DownloadCategoriesController < Ecm::Downloads::Configuration.base_controller.constantize
   def index
-    @download_categories = Ecm::Downloads::DownloadCategory.all.decorate
+    @collection = Ecm::Downloads::DownloadCategory.all.decorate
   end
 
   def show
-    @download_category = Ecm::Downloads::DownloadCategory.friendly.find(params[:id])
+    @resource = Ecm::Downloads::DownloadCategory.friendly.find(params[:id])
   end
 end

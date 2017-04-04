@@ -1,0 +1,11 @@
+- content_for :title, @resource.name
+- content_for :meta_description, @resource.name
+
+%h1= @resource.name
+
+%p= @resource.description
+
+= render @resource.ecm_downloads_downloads.decorate
+
+= bootstrap_button(to: :back, context: :default) do
+  = t('.back')

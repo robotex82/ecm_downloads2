@@ -1,0 +1,6 @@
+= bootstrap_responsive_media_object do
+  %h4= download.name
+  %p= download.description
+  = bootstrap_button(to: polymorphic_url([:download, download], only_path: true), context: :primary) do
+    = t('.download')
+    = "(#{download.filesize})"

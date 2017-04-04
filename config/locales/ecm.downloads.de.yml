@@ -1,13 +1,19 @@
 de:
   ecm:
     downloads:
-      active_admin:
-        menu: "Downloads"
       download:
         actions:
           start_download: "Jetzt herunterladen"
         messages:
           not_found: "Download \"%{name}\" nicht gefunden."
+      downloads:
+        download:
+          download: 'Herunterladen'
+        index:
+          back: 'Zurück'
+      download_categories:
+        index:
+          back: Zurück
       download_category:
         actions:
           back_to_index: "Zurück zur Übersicht"

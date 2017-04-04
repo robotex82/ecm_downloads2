@@ -1,0 +1,11 @@
+- content_for :title, Ecm::Downloads::Download.model_name.human(count: :other)
+- content_for :meta_description, Ecm::Downloads::Download.model_name.human(count: :other)
+
+%h1= Ecm::Downloads::Download.model_name.human(count: :other)
+
+- @collection.group_by{|d| d.ecm_downloads_download_category}.each do |category, collection|
+  %h2= category.name
+  = render collection
+
+= bootstrap_button(to: :back, context: :default) do
+  = t('.back')

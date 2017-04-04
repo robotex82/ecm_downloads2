@@ -1,0 +1,9 @@
+- content_for :title, Ecm::Downloads::DownloadCategory.model_name.human(count: :other)
+- content_for :meta_description, Ecm::Downloads::DownloadCategory.model_name.human(count: :other)
+
+%h1= Ecm::Downloads::DownloadCategory.model_name.human(count: :other)
+
+= render @collection
+
+= bootstrap_button(to: root_path, context: :default) do
+  = t('.back')

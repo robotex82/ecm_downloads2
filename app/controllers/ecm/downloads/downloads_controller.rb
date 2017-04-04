@@ -6,7 +6,7 @@ class Ecm::Downloads::DownloadsController < Ecm::Downloads::Configuration.base_c
   end
 
   def index
-    @downloads = Ecm::Downloads::Download.published.all.decorate
+    @collection = Ecm::Downloads::Download.published.all.decorate
   end
 
   def show

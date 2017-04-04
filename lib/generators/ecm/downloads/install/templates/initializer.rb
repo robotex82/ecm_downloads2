@@ -12,18 +12,6 @@ Ecm::Downloads.configure do |config|
   #
   config.base_controller = 'ApplicationController'
 
-  # Set the css classes for the download categories table
-  #
-  # Default: config.download_categories_table_classes = 'table table-striped table-hover'
-  #
-  config.download_categories_table_classes = 'table table-striped table-hover'
-
-  # Set the css classes for the downloads table
-  #
-  # Default: config.downloads_table_classes = 'table table-striped table-hover'
-  #
-  config.downloads_table_classes = 'table table-striped table-hover'
-
   # Adds <notextile> tags around the to fix html output.
   #
   # Default: config.prevent_textile_rendering_in_html = true
