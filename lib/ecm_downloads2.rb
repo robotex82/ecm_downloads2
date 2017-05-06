@@ -8,7 +8,6 @@ require 'draper'
 
 require 'ecm/downloads/engine'
 require 'ecm/downloads/configuration'
-require 'ecm/downloads/routing'
 
 module Ecm
   module Downloads

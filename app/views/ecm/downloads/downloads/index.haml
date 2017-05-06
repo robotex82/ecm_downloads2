@@ -3,7 +3,7 @@
 
 %h1= Ecm::Downloads::Download.model_name.human(count: :other)
 
-- @collection.group_by{|d| d.ecm_downloads_download_category}.each do |category, collection|
+- @collection.group_by{|d| d.download_category}.each do |category, collection|
   %h2= category.name
   = render collection
 

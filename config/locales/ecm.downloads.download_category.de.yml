@@ -7,8 +7,8 @@ de:
         created_at: Erstellt am
         depth: Baumtiefe
         description: Beschreibung
-        ecm_downloads_downloads: Downloads
-        ecm_downloads_downloads_count: Downloads
+        downloads: Downloads
+        downloads_count: Downloads
         lft: Links
         link: Link
         locale: Sprache
@@ -24,5 +24,5 @@ de:
         one: Download Kategorie
         other: Download Kategorien
   routes:
-    ecm_downloads_download_categories: download-kategorien
+    download_categories: download-kategorien
 

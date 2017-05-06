@@ -11,8 +11,8 @@ en:
         asset_updated_at: file updated at
         created_at: created at
         description: description
-        ecm_downloads_download_category: download category
-        ecm_downloads_download_category_id: download category
+        download_category: download category
+        download_category_id: download category
         filesize: filesize
         link: link
         locale: locale
@@ -26,5 +26,5 @@ en:
         one: download
         other: downloads
   routes:
-    ecm_downloads_downloads: downloads
+    downloads: downloads
 

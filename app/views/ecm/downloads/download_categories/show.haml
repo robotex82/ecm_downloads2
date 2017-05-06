@@ -5,7 +5,7 @@
 
 %p= @resource.description
 
-= render @resource.ecm_downloads_downloads.decorate
+= render @resource.downloads.decorate
 
 = bootstrap_button(to: :back, context: :default) do
   = t('.back')
