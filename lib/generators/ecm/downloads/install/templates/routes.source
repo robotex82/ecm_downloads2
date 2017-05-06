@@ -1,5 +1,3 @@
   
   # ECM Downloads Frontend Routing
-  localized do
-    Ecm::Downloads::Routing.routes(self)
-  end
+  mount Ecm::Downloads::Engine, at: '/'
