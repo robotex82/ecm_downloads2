@@ -23,3 +23,5 @@ de:
       views:
         actions:
           back: 'Zurück'
+  routes:
+    ecm_downloads: downloads

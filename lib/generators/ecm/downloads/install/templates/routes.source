@@ -1,3 +1,2 @@
   
-  # ECM Downloads Frontend Routing
   mount Ecm::Downloads::Engine, at: '/'
