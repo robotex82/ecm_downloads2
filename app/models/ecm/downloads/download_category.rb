@@ -10,16 +10,6 @@ module Ecm
       accepts_nested_attributes_for :downloads,
                                     allow_destroy: true
 
-      # attributes
-      attr_accessible :description,
-                      :downloads_attributes,
-                      :downloads_count,
-                      :locale,
-                      :name,
-                      :parent_id,
-                      :position,
-                      :slug if respond_to? :attr_accessible
-
       # awesome nested set
       acts_as_nested_set
       default_scope { order('lft ASC') }

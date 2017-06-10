@@ -24,4 +24,4 @@ de:
         actions:
           back: 'Zurück'
   routes:
-    ecm_downloads: downloads
+    ecm_downloads_engine: downloads

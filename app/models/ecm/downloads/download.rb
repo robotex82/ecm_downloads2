@@ -12,14 +12,8 @@ module Ecm
       belongs_to :download_category,
                inverse_of: :downloads
 
-      # attibutes
-      attr_accessible :asset,
-                    :description,
-                    :download_category_id,
-                    :name if respond_to? :attr_accessible
-
       # callbacks
-      before_update :fix_updated_position, if: proc { |d| !position.blank? && d.category_id_changed? }
+      before_update :fix_updated_position, if: proc { |d| !position.blank? && d.download_category_id_changed? }
 
       # friendly id
       extend FriendlyId

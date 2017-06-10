@@ -1,5 +1,5 @@
 # This migration comes from ecm_downloads_engine (originally 2)
-class CreateEcmDownloadsDownloads < ActiveRecord::Migration
+class CreateEcmDownloadsDownloads < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_downloads_downloads do |t|
       t.string :name
