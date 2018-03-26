@@ -1,4 +1,7 @@
 de:
+  component:
+    collection_table:
+      download: Herunterladen
   ecm:
     downloads:
       download:

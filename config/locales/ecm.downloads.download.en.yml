@@ -3,6 +3,7 @@ en:
   activerecord:
     attributes:
       ecm/downloads/download:
+        additional_actions: ''
         asset: file
         asset_content_type: content type
         asset_file_name: filename
