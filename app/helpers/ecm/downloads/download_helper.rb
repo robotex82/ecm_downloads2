@@ -5,14 +5,10 @@ module Ecm::Downloads
       if download.nil?
         I18n.t('ecm.downloads.download.messages.not_found', name: download_name)
       else
-        begin
-          o = Ecm::Downloads::Configuration.prevent_textile_rendering_in_html ? '<notextile>' : ''
-          o << render(download)
-          o << '</notextile>' if Ecm::Downloads::Configuration.prevent_textile_rendering_in_html
-          return o.html_safe
-        rescue => e
-          raise e
-        end
+        o = Ecm::Downloads::Configuration.prevent_textile_rendering_in_html ? '<notextile>' : ''
+        o << render(download)
+        o << '</notextile>' if Ecm::Downloads::Configuration.prevent_textile_rendering_in_html
+        return o.html_safe
       end
     end
   end
