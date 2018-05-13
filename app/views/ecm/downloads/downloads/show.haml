@@ -1,0 +1,6 @@
+%h1= Ecm::Downloads::Download.model_name.human(count: :other)
+
+= render @download
+
+.well.page-actions
+  = link_to @download.download_category, ecm_downloads.url_for(@download.download_category), class: 'btn btn-default'
